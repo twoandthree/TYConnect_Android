@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDF3F5"
+    tools:context=".SetAppointment">
+
+
+    <ImageView
+        android:id="@+id/week_banner"
+        android:layout_width="352dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/week_banner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/time_slots"
+        android:layout_width="253dp"
+        android:layout_height="457dp"
+        android:src="@drawable/timeslots"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/week_banner"
+        app:layout_constraintVertical_bias="0.743" />
+
+    <ImageView
+        android:id="@+id/left_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:background="@null"
+        android:src="@drawable/left_button"
+        app:layout_constraintStart_toStartOf="@+id/week_banner"
+        app:layout_constraintTop_toBottomOf="@+id/week_banner" />
+
+    <ImageView
+        android:id="@+id/right_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:src="@drawable/right_button"
+        app:layout_constraintEnd_toEndOf="@+id/week_banner"
+        app:layout_constraintTop_toBottomOf="@+id/week_banner" />
+
+    <ImageView
+        android:id="@+id/up_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="48dp"
+        android:src="@drawable/up_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toEndOf="@+id/time_slots"
+        app:layout_constraintTop_toTopOf="@+id/time_slots" />
+
+    <ImageView
+        android:id="@+id/down_button"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/down_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_slots"
+        app:layout_constraintTop_toBottomOf="@+id/up_button" />
+
+    <ImageView
+        android:id="@+id/button_to_open"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="28dp"
+        android:src="@drawable/button_to_open"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toEndOf="@+id/time_slots"
+        app:layout_constraintTop_toBottomOf="@+id/down_button" />
+
+    <ImageView
+        android:id="@+id/button_to_close"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/button_to_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintStart_toEndOf="@+id/time_slots"
+        app:layout_constraintTop_toBottomOf="@+id/button_to_open" />
+
+    <ImageView
+        android:id="@+id/done_with_schedule"
+        android:layout_width="104dp"
+        android:layout_height="49dp"
+        android:src="@drawable/done_with_schedule"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/time_slots"
+        app:layout_constraintTop_toBottomOf="@+id/button_to_close"
+        app:layout_constraintVertical_bias="0.282" />
+
+    <TextView
+        android:id="@+id/Monday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Mon"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/week_banner"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/Tuesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Tue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/Monday"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/Wednesday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Wed"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/Tuesday"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/Thursday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Thu"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/Wednesday"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/Friday"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Fri"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/week_banner"
+        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintStart_toEndOf="@+id/Thursday"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/month_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/oxygen_light"
+        android:text=""
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/week_banner"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/week_banner"
+        app:layout_constraintTop_toTopOf="@+id/week_banner" />
+
+    <TextView
+        android:id="@+id/mon_day"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="TextView"
+        android:fontFamily="@font/nanumgothic_bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/week_banner"
+        app:layout_constraintEnd_toEndOf="@+id/Monday"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Monday"
+        app:layout_constraintTop_toBottomOf="@+id/Monday"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tue_day"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="TextView"
+        android:fontFamily="@font/nanumgothic_bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/week_banner"
+        app:layout_constraintEnd_toEndOf="@+id/Tuesday"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Tuesday"
+        app:layout_constraintTop_toBottomOf="@+id/Tuesday"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/wed_day"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="TextView"
+        android:fontFamily="@font/nanumgothic_bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/week_banner"
+        app:layout_constraintEnd_toEndOf="@+id/Wednesday"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Wednesday"
+        app:layout_constraintTop_toBottomOf="@+id/Wednesday"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/thu_day"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:gravity="left"
+        android:text="TextView"
+        android:fontFamily="@font/nanumgothic_bold"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/week_banner"
+        app:layout_constraintEnd_toEndOf="@+id/Thursday"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Thursday"
+        app:layout_constraintTop_toBottomOf="@+id/Thursday"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fri_day"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/nanumgothic_bold"
+        android:gravity="left"
+        android:text="TextView"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/week_banner"
+        app:layout_constraintEnd_toEndOf="@+id/Friday"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Friday"
+        app:layout_constraintTop_toBottomOf="@+id/Friday"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_time_slots"
+        android:layout_width="176dp"
+        android:layout_height="414dp"
+        app:layout_constraintBottom_toBottomOf="@+id/time_slots"
+        app:layout_constraintEnd_toEndOf="@+id/time_slots"
+        app:layout_constraintStart_toStartOf="@+id/time_slots"
+        app:layout_constraintTop_toTopOf="@+id/time_slots" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
