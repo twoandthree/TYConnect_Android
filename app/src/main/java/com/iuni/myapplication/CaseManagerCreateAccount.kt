@@ -8,6 +8,8 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_case_manager_create_account.*
+import kotlinx.android.synthetic.main.case_manager_firstlast_name.*
+import kotlinx.android.synthetic.main.user_about_me.done_button_image
 
 class CaseManagerCreateAccount : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +27,26 @@ class CaseManagerCreateAccount : AppCompatActivity() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter valid email/password.", Toast.LENGTH_LONG).show()
             }
+            userAboutMe(email, password)
+        }
+
+       already_have_an_account_case_manager.setOnClickListener {
+           val intent = Intent(this, CaseManagerLogin::class.java)
+           startActivity(intent) 
+       }
+    }
+
+    private fun userAboutMe(email: String, password: String) {
+        setContentView(R.layout.case_manager_firstlast_name)
+
+        done_button_image.setOnClickListener {
+            val case_manager_name = cm_name_edittext_create_account_page.text.toString().capitalize()
+            val case_manager_last_name = cm_lastname_edittext_create_account_page.text.toString().capitalize()
+            val case_manager_aboutme = cm_aboutme_edittext.text.toString()
+
+            if (case_manager_name.isEmpty() || case_manager_last_name.isEmpty()) {
+                Toast.makeText(this, "Please complete the fields name/last name.", Toast.LENGTH_LONG).show()
+            }
 
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener {
@@ -32,21 +54,21 @@ class CaseManagerCreateAccount : AppCompatActivity() {
 
                     Log.d("CreateAccountActivity", "Created user with uid: ${it.result?.user?.uid}")
 
-                    saveUserToFirebaseDatabase()
+                    saveUserToFirebaseDatabase(case_manager_name, case_manager_last_name, case_manager_aboutme)
 
-                    val intent = Intent(this, CaseManagerMenuMain::class.java)
+                    val intent = Intent(this, MenuMain::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
+
                 }
         }
-
-       already_have_an_account_case_manager.setOnClickListener {
-           val intent = Intent(this, CaseManagerLogin::class.java)
-           startActivity(intent)
-       }
     }
 
-    private fun saveUserToFirebaseDatabase() {
+    private fun saveUserToFirebaseDatabase(
+        case_manager_name: String,
+        case_manager_last_name: String,
+        case_manager_aboutme: String
+    ) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/case_managers/$uid")
 
@@ -56,6 +78,19 @@ class CaseManagerCreateAccount : AppCompatActivity() {
             .addOnSuccessListener {
                 Log.d("CreteAccountActivity", "Saved user to Firebase Database.")
             }
+        updateUser(case_manager_name, case_manager_last_name, case_manager_aboutme)
+    }
+}
+
+private fun updateUser(name: String, last_name: String, aboutme: String) {
+    val updateUser = FirebaseAuth.getInstance().currentUser?.uid
+    val refForUpdate = FirebaseDatabase.getInstance().reference
+
+    val full_name = "$name $last_name"
+
+    if (updateUser != null) {
+        refForUpdate.child("/case_managers").child(updateUser).child("full_name").setValue(full_name)
+        refForUpdate.child("/case_managers").child(updateUser).child("about_me").setValue(aboutme)
     }
 }
 

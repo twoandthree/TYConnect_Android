@@ -37,16 +37,13 @@ class CaseManagerLogin : AppCompatActivity() {
                     checkRef.child("case_managers").child(uid).child("email")
                         .addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(dataSnapshot: DataSnapshot) {
-
                                 when {
                                     dataSnapshot.value.toString() == "null" -> startActivity(createAccountIntent)
                                     dataSnapshot.value.toString() == email_at_login_case_manager -> startActivity(caseManagerMenuMainIntent)
-
                                 }
                             }
                             override fun onCancelled(databaseError: DatabaseError) {}
                         })
-
                     if (!it.isSuccessful) return@addOnCompleteListener
                     Log.d("LoginActivity", "User has signed in.")
                 }

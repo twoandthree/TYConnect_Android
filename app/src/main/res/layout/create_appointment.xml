@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".SetAppointment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/creating_appointment_for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/oxygen_regular"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:paddingBottom="10dp"/>
+
+        <EditText
+            android:id="@+id/set_appointment_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Date (mm/dd/yyyy)"
+            android:gravity="center"
+            android:fontFamily="@font/kumbhsans_light"
+            android:inputType="text|date" />
+
+        <EditText
+            android:id="@+id/set_appointment_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Time (12:00pm)"
+            android:gravity="center"
+            android:fontFamily="@font/kumbhsans_light"
+            android:inputType="text|time" />
+
+        <EditText
+            android:id="@+id/set_appointment_case_manager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Case Manager"
+            android:gravity="center"
+            android:fontFamily="@font/kumbhsans_light"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/set_appointment_user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Client Name"
+            android:gravity="center"
+            android:fontFamily="@font/kumbhsans_light"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/set_appointment_format"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Format (In Person/Zoom)"
+            android:gravity="center"
+            android:fontFamily="@font/kumbhsans_light"
+            android:inputType="text" />
+
+        <Button
+            android:id="@+id/appointment_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:fontFamily="@font/nanumgothic_bold"
+            android:clickable="false"
+            android:onClick="setAppointment">
+        </Button>
+
+        <TextView
+            android:id="@+id/appointment_text_view_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:fontFamily="@font/oxygen_light"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
