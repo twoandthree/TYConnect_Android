@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "571628636561",
+    "firebase_url": "https://tyconnect.firebaseio.com",
+    "project_id": "tyconnect",
+    "storage_bucket": "tyconnect.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571628636561:android:bae55eac90fbf1bb3a3230",
+        "android_client_info": {
+          "package_name": "com.iuni.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571628636561-q0gfmckodvtuqjhgh06o8qak9j8p63n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqUxosbSybe5k9cv9lB39yhGHXn5vmuS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571628636561-q0gfmckodvtuqjhgh06o8qak9j8p63n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

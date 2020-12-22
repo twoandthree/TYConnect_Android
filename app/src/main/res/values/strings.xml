@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="_8_00am">8:00am</string>
+    <string name="_9_00am">9:00am</string>
+</resources>

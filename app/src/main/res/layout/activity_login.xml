@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2F0FF"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="@+id/tyconnect_text"
+        app:layout_constraintStart_toStartOf="@+id/tyconnect_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tylogo">
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/tyconnect_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/tyconnect_text" />
+
+    <EditText
+        android:id="@+id/email_edittext_login"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/nanumgothic_regular"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tyconnect_text" />
+
+    <ImageView
+        android:id="@+id/email_line_login"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintBottom_toBottomOf="@+id/email_edittext_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/email_edittext_login"
+        app:srcCompat="@drawable/email" />
+
+    <EditText
+        android:id="@+id/password_edittext_login"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="@null"
+        android:ems="10"
+        android:fontFamily="@font/nanumgothic_regular"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="5sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/email_line_login" />
+
+    <ImageView
+        android:id="@+id/password_line_login"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        app:layout_constraintBottom_toBottomOf="@+id/password_edittext_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/password_edittext_login"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/password" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="206dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="32dp"
+        android:scaleX="1"
+        android:scaleY="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_line_login"
+        app:srcCompat="@drawable/createaccountbutton" />
+
+    <TextView
+        android:id="@+id/login_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oxygen_regular"
+        android:text="Login"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toBottomOf="@+id/password_line_login"
+        app:layout_constraintVertical_bias="0.714" />
+
+    <TextView
+        android:id="@+id/create_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/oxygen_light"
+        android:text="Create an account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/true_login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="@+id/imageView6"
+        app:layout_constraintStart_toStartOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<ImageView-->
+<!--android:id="@+id/login_button_img"-->
+<!--android:layout_width="195dp"-->
+<!--android:layout_height="80dp"-->
+<!--android:layout_marginTop="24dp"-->
+<!--android:background="@drawable/createaccountbutton"-->
+<!--app:layout_constraintEnd_toEndOf="parent"-->
+<!--app:layout_constraintStart_toStartOf="parent"-->
+<!--app:layout_constraintTop_toBottomOf="@+id/password_line_create_account_page" />-->
