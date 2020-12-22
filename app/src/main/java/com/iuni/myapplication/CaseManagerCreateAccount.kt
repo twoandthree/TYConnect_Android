@@ -27,7 +27,11 @@ class CaseManagerCreateAccount : AppCompatActivity() {
             if (email.isEmpty() || password.isEmpty()) {
                 Toast.makeText(this, "Please enter valid email/password.", Toast.LENGTH_LONG).show()
             }
-            userAboutMe(email, password)
+
+            if (verification_code.text.toString() == "0t1y1c235") {
+                userAboutMe(email, password)
+            }
+
         }
 
        already_have_an_account_case_manager.setOnClickListener {
@@ -42,7 +46,6 @@ class CaseManagerCreateAccount : AppCompatActivity() {
         done_button_image.setOnClickListener {
             val case_manager_name = cm_name_edittext_create_account_page.text.toString().capitalize()
             val case_manager_last_name = cm_lastname_edittext_create_account_page.text.toString().capitalize()
-            val case_manager_aboutme = cm_aboutme_edittext.text.toString()
 
             if (case_manager_name.isEmpty() || case_manager_last_name.isEmpty()) {
                 Toast.makeText(this, "Please complete the fields name/last name.", Toast.LENGTH_LONG).show()
@@ -54,7 +57,7 @@ class CaseManagerCreateAccount : AppCompatActivity() {
 
                     Log.d("CreateAccountActivity", "Created user with uid: ${it.result?.user?.uid}")
 
-                    saveUserToFirebaseDatabase(case_manager_name, case_manager_last_name, case_manager_aboutme)
+                    saveUserToFirebaseDatabase(case_manager_name, case_manager_last_name)
 
                     val intent = Intent(this, MenuMain::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
@@ -67,7 +70,6 @@ class CaseManagerCreateAccount : AppCompatActivity() {
     private fun saveUserToFirebaseDatabase(
         case_manager_name: String,
         case_manager_last_name: String,
-        case_manager_aboutme: String
     ) {
         val uid = FirebaseAuth.getInstance().uid ?: ""
         val ref = FirebaseDatabase.getInstance().getReference("/case_managers/$uid")
@@ -78,11 +80,11 @@ class CaseManagerCreateAccount : AppCompatActivity() {
             .addOnSuccessListener {
                 Log.d("CreteAccountActivity", "Saved user to Firebase Database.")
             }
-        updateUser(case_manager_name, case_manager_last_name, case_manager_aboutme)
+        updateUser(case_manager_name, case_manager_last_name)
     }
 }
 
-private fun updateUser(name: String, last_name: String, aboutme: String) {
+private fun updateUser(name: String, last_name: String) {
     val updateUser = FirebaseAuth.getInstance().currentUser?.uid
     val refForUpdate = FirebaseDatabase.getInstance().reference
 
@@ -90,7 +92,7 @@ private fun updateUser(name: String, last_name: String, aboutme: String) {
 
     if (updateUser != null) {
         refForUpdate.child("/case_managers").child(updateUser).child("full_name").setValue(full_name)
-        refForUpdate.child("/case_managers").child(updateUser).child("about_me").setValue(aboutme)
+        refForUpdate.child("/case_managers").child(updateUser).child("user_type").setValue("case_manager")
     }
 }
 

@@ -7,7 +7,8 @@ class Appointment(
     timeAppointment: String = "",
     caseManagerName: String = "",
     userName: String = "",
-    formatAppointment: String = ""
+    formatAppointment: String = "",
+    clientUID: String = ""
 ) {
     var documentId: String? = null
     private set
@@ -20,6 +21,8 @@ class Appointment(
     var caseManagerName: String? = caseManagerName
     private set
     var formatAppointment: String? = formatAppointment
+    private set
+    var clientUID: String? = clientUID
     private set
 
     @Exclude

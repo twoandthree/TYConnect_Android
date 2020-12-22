@@ -38,8 +38,10 @@ class CaseManagerLogin : AppCompatActivity() {
                         .addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(dataSnapshot: DataSnapshot) {
                                 when {
-                                    dataSnapshot.value.toString() == "null" -> startActivity(createAccountIntent)
-                                    dataSnapshot.value.toString() == email_at_login_case_manager -> startActivity(caseManagerMenuMainIntent)
+                                    dataSnapshot.value.toString() == "null" ->
+                                        startActivity(createAccountIntent)
+                                    dataSnapshot.value.toString() == email_at_login_case_manager ->
+                                        startActivity(caseManagerMenuMainIntent)
                                 }
                             }
                             override fun onCancelled(databaseError: DatabaseError) {}
@@ -53,6 +55,5 @@ class CaseManagerLogin : AppCompatActivity() {
             val intent = Intent(this, CaseManagerCreateAccount::class.java)
             startActivity(intent)
         }
-
     }
 }

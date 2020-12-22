@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F7FF"
+    android:orientation="vertical"
+    tools:context=".CaseManagerMenuMain">
+
+    <ImageView
+        android:id="@+id/tylogo_main_menu_cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tylogo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/messages_main_menu_cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/message_button"
+        app:layout_constraintEnd_toEndOf="@+id/tylogo_main_menu_cm"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/tylogo_main_menu_cm"
+        app:layout_constraintTop_toBottomOf="@+id/tylogo_main_menu_cm" />
+
+    <ImageView
+        android:id="@+id/appointments_main_menu_cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/appointment_button"
+        app:layout_constraintEnd_toEndOf="@+id/messages_main_menu_cm"
+        app:layout_constraintStart_toStartOf="@+id/messages_main_menu_cm"
+        app:layout_constraintTop_toBottomOf="@+id/messages_main_menu_cm" />
+
+    <ImageView
+        android:id="@+id/signout_cm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="80dp"
+        android:layout_weight=".10"
+        android:adjustViewBounds="true"
+        android:paddingBottom="30dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/appointments_main_menu_cm"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="@+id/appointments_main_menu_cm"
+        app:layout_constraintTop_toBottomOf="@+id/appointments_main_menu_cm"
+        app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
